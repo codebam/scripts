@@ -6,7 +6,7 @@
 import weechat
 import datetime
 
-weechat.register("soju", "soju", "0.5.0", "AGPL3", "soju bouncer integration", "", "")
+weechat.register("soju", "soju", "0.5.1", "AGPL3", "soju bouncer integration", "", "")
 
 BOUNCER_CAP = "soju.im/bouncer-networks"
 
@@ -83,7 +83,7 @@ def handle_bouncer_msg(data, signal, signal_data):
         return weechat.WEECHAT_RC_OK_EAT
 
     # Retrieve the network name from the attributes
-    net_name = None
+    net_name = []
     raw_attr_list = args[2].split(";")
     for raw_attr in raw_attr_list:
         k, v = raw_attr.split("=")
